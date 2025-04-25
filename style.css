@@ -151,6 +151,22 @@ body {
   align-self: flex-start;
 }
 
+.buttonbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.buttonbar button {
+  height: 2rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 20px;
+}
+
 .content {
   background-color: var(--gray);
   grid-area: content;
