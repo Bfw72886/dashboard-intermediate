@@ -4,6 +4,7 @@
   --gray: #e2e8f0;
   --font-gray: #b7b7b7;
   --profile-pic-size: 2.3rem;
+  --profile-pic-big-size: calc(var(--profile-pic-size) * 1.5);
 }
 
 @font-face {
@@ -45,8 +46,8 @@ body {
 }
 
 .profile-img-big {
-  height: calc(var(--profile-pic-size) * 1.5);
-  width: calc(var(--profile-pic-size) * 1.5);
+  height: var(--profile-pic-big-size);
+  width: var(--profile-pic-big-size);
 }
 
 .sidebar {
@@ -122,6 +123,32 @@ body {
   justify-content: right;
   justify-items: center;
   font-weight: bold;
+}
+
+.welcomebar {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: var(--profile-pic-big-size) 12px 1fr;
+  grid-template-rows: 3fr 4fr;
+  grid-template-areas:
+    'img . greeting'
+    'img . userinfo';
+  align-items: center;
+}
+
+.welcomebar img {
+  grid-area: img;
+}
+
+.welcomebar .greeting {
+  grid-area: greeting;
+  font-size: 0.7rem;
+  align-self: flex-end;
+}
+
+.welcomebar .userinfo {
+  grid-area: userinfo;
+  align-self: flex-start;
 }
 
 .content {
