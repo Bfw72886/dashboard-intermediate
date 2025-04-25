@@ -1,3 +1,10 @@
+:root {
+  --blue: #1992d4;
+  --yellow: #f0b429;
+  --gray: #e2e8f0;
+  --font-gray: #b7b7b7;
+}
+
 @font-face {
   font-family: 'robotoregular';
   src: url('Roboto-Regular-webfont.woff') format('woff');
@@ -10,4 +17,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    'sidebar navbar'
+    'sidebar content';
+}
+
+.sidebar {
+  background-color: var(--blue);
+  grid-area: sidebar;
+}
+
+.navbar {
+  background-color: var(white);
+  grid-area: navbar;
+}
+
+.content {
+  background-color: var(--gray);
+  grid-area: content;
 }
