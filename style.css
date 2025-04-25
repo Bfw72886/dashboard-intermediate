@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'robotoregular';
+  src: url('Roboto-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'robotoregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
