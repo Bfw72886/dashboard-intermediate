@@ -33,6 +33,34 @@ body {
 .sidebar {
   background-color: var(--blue);
   grid-area: sidebar;
+  color: white;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-template-rows: 1fr 7fr 7fr;
+  gap: 32px;
+  padding: 28px;
+}
+
+.sidebar ul li {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: ;
+  gap: 40px 20px;
+}
+
+.sidebar .header img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.sidebar .links {
+  list-style: none;
+}
+
+.sidebar .links img {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .navbar {
@@ -43,4 +71,8 @@ body {
 .content {
   background-color: var(--gray);
   grid-area: content;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
