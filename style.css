@@ -24,7 +24,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: minmax(150px, 1fr) 4fr;
   grid-template-areas:
     'sidebar navbar'
     'sidebar content';
@@ -76,8 +76,11 @@ body {
 }
 
 .navbar {
-  background-color: var(white);
+  background-color: white;
   grid-area: navbar;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 3fr;
 }
 
 .content {
