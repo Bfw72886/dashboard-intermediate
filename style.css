@@ -3,6 +3,7 @@
   --yellow: #f0b429;
   --gray: #e2e8f0;
   --font-gray: #b7b7b7;
+  --profile-pic-size: 2.3rem;
 }
 
 @font-face {
@@ -38,6 +39,14 @@ body {
 .profile-img {
   max-height: 100%;
   max-width: 100%;
+  border-radius: 50%;
+  height: var(--profile-pic-size);
+  width: var(--profile-pic-size);
+}
+
+.profile-img-big {
+  height: calc(var(--profile-pic-size) * 1.5);
+  width: calc(var(--profile-pic-size) * 1.5);
 }
 
 .sidebar {
@@ -99,10 +108,20 @@ body {
 
 .searchbar input {
   height: 2rem;
-  padding-inline: 4px;
+  padding-inline: 12px;
   border: none;
   background-color: var(--gray);
   border-radius: 16px;
+}
+
+.profilebar {
+  display: grid;
+  grid-template-columns: 2rem var(--profile-pic-size) 150px;
+  gap: 16px;
+  align-items: center;
+  justify-content: right;
+  justify-items: center;
+  font-weight: bold;
 }
 
 .content {
