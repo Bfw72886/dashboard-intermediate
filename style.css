@@ -2,9 +2,13 @@
   --blue: #1992d4;
   --yellow: #f0b429;
   --gray: #e2e8f0;
-  --font-gray: #b7b7b7;
+  --font-gray: #747474;
+  --shadow-color: #b7b7b7;
+  --shadow: 2px 2px 4px var(--shadow-color);
   --profile-pic-size: 2.3rem;
   --profile-pic-big-size: calc(var(--profile-pic-size) * 1.5);
+  --content-gap: 16px;
+  --icon-size: 1.5rem;
 }
 
 @font-face {
@@ -22,8 +26,6 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: minmax(150px, 1fr) 4fr;
@@ -49,8 +51,8 @@ h5 {
 }
 
 .icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: var(--icon-size);
+  width: var(--icon-size);
 }
 
 .profile-img {
@@ -115,6 +117,8 @@ h5 {
   padding-block: 16px;
   padding-inline: 32px;
   gap: 16px;
+  box-shadow: var(--shadow);
+  z-index: 1;
 }
 
 .searchbar {
@@ -192,6 +196,18 @@ h5 {
   grid-template-areas:
     'projects announcements'
     'projects trending';
+  padding-left: 20px;
+  padding-right: 32px;
+  padding-block: 28px;
+  gap: var(--content-gap);
+}
+
+.content .card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  z-index: 1;
+  padding: 24px;
 }
 
 .content ul {
@@ -200,6 +216,47 @@ h5 {
 
 .projects-container {
   grid-area: projects;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5rem repeat(3, 1fr);
+  gap: var(--content-gap);
+}
+
+.projects-container h3 {
+  grid-column: span 2;
+}
+
+.projects-container .card {
+  border-left: 8px solid var(--yellow);
+  display: grid;
+  grid-column: 1fr repeat(3, var(--icon-size));
+  grid-template-rows: 1.5rem 1fr var(--icon-size);
+  grid-template-areas:
+    'header header header header'
+    'paragraph paragraph paragraph paragraph'
+    '. favorite view share';
+  column-gap: 20px;
+}
+
+.projects-container .card h4 {
+  grid-area: header;
+}
+
+.projects-container .card p {
+  grid-area: paragraph;
+  color: var(--font-gray);
+}
+
+.projects-container .card .icon:nth-of-type(1) {
+  grid-area: favorite;
+}
+
+.projects-container .card .icon:nth-of-type(2) {
+  grid-area: view;
+}
+
+.projects-container .card .icon:nth-of-type(3) {
+  grid-area: share;
 }
 
 .announcements-container {
