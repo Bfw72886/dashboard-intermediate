@@ -284,4 +284,39 @@ h5 {
 
 .trending-container {
   grid-area: trending;
+  display: grid;
+  grid-template-rows: 1.5rem;
+  gap: var(--content-gap);
+}
+
+.trending-container ul {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.trending-container ul li {
+  display: grid;
+  grid-template-columns: var(--profile-pic-size) 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'img username'
+    'img projectname';
+  column-gap: 16px;
+}
+
+.trending-container ul li img {
+  grid-area: img;
+  align-self: center;
+}
+
+.trending-container ul li h5 {
+  grid-area: username;
+  align-self: flex-end;
+}
+
+.trending-container ul li span {
+  grid-area: projectname;
+  font-size: 0.9rem;
+  color: var(--font-gray);
 }
