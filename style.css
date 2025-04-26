@@ -32,6 +32,22 @@ body {
     'sidebar content';
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
 .icon {
   height: 1.5rem;
   width: 1.5rem;
@@ -170,8 +186,26 @@ body {
 .content {
   background-color: var(--gray);
   grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'projects announcements'
+    'projects trending';
 }
 
-h2 {
-  font-size: 1.5rem;
+.content ul {
+  list-style: none;
+}
+
+.projects-container {
+  grid-area: projects;
+}
+
+.announcements-container {
+  grid-area: announcements;
+}
+
+.trending-container {
+  grid-area: trending;
 }
