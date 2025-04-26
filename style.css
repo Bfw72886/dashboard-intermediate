@@ -261,6 +261,25 @@ h5 {
 
 .announcements-container {
   grid-area: announcements;
+  display: grid;
+  gap: var(--content-gap);
+  grid-template-rows: 1.5rem;
+}
+
+.announcements-container ul {
+  display: grid;
+  grid-template-rows: 1fr 2px 1fr 2px 1fr;
+  gap: 16px;
+}
+
+.announcements-container ul li p {
+  font-size: 0.9rem;
+  color: var(--font-gray);
+}
+
+.announcements-container ul hr {
+  background-color: var(--gray);
+  border: none;
 }
 
 .trending-container {
